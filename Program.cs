@@ -12,7 +12,7 @@ namespace ToDo {
                 if (option == 1) {
                     addTodo();
                 } else if (option == 2) {
-                    ShowMenuDos();
+                    removeTodo();
                 } else if (option == 3) {
                     ShowMenuTres();
                 } else if (option == 4) {
@@ -50,7 +50,7 @@ namespace ToDo {
             }
         }
 
-        public static void ShowMenuDos() {
+        public static void removeTodo() {
             try {
                 Console.WriteLine("Ingrese el número de la tarea a remover: ");
                 // Show current taks
@@ -59,17 +59,19 @@ namespace ToDo {
                 }
                 Console.WriteLine("----------------------------------------");
 
-                string line = Console.ReadLine();
+                string todoToRemove = Console.ReadLine();
                 // Remove one position
-                int indexToRemove = Convert.ToInt32(line) - 1;
+                int indexToRemove = Convert.ToInt32(todoToRemove) - 1;
                 if (indexToRemove > -1) {
                     if (todoList.Count > 0) {
-                        string task = todoList[indexToRemove];
+                        string removedTodo = todoList[indexToRemove];
                         todoList.RemoveAt(indexToRemove);
-                        Console.WriteLine("Tarea " + task + " eliminada");
+                        Console.WriteLine("Tarea " + removedTodo + " eliminada");
                     }
                 }
-            } catch (Exception) {}
+            } catch (Exception) {
+                throw new Exception("Error al remover la tarea");
+            }
         }
 
         public static void ShowMenuTres() {
