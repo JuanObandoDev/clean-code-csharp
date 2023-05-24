@@ -9,18 +9,18 @@ namespace ToDo {
             int option = 0;
             do {
                 option = ShowMainMenu();
-                if (option == 1) {
+                if ((Menu)option == Menu.AddTodo) {
                     addTodo();
-                } else if (option == 2) {
+                } else if ((Menu)option == Menu.RemoveTodo) {
                     removeTodo();
-                } else if (option == 3) {
+                } else if ((Menu)option == Menu.ShowTodoList) {
                     showTodoList();
-                } else if (option == 4) {
+                } else if ((Menu)option == Menu.Exit) {
                     Console.WriteLine("Gracias por usar la aplicación");
                 } else {
                     Console.WriteLine("Opción no válida");
                 }
-            } while (option != 4);
+            } while ((Menu)option != Menu.Exit);
         }
         /// <summary>
         /// Show the main menu 
@@ -85,5 +85,12 @@ namespace ToDo {
                 Console.WriteLine("----------------------------------------");
             }
         }
+    }
+
+    public enum Menu {
+        AddTodo = 1,
+        RemoveTodo = 2,
+        ShowTodoList = 3,
+        Exit = 4
     }
 }
