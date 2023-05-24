@@ -6,17 +6,17 @@ namespace ToDo {
         public static List<string> todoList { get; set; }
         static void Main(string[] args) {
             todoList = new List<string>();
-            int variable = 0;
+            int option = 0;
             do {
-                variable = ShowMainMenu();
-                if (variable == 1) {
+                option = ShowMainMenu();
+                if (option == 1) {
                     ShowMenuAdd();
-                } else if (variable == 2) {
+                } else if (option == 2) {
                     ShowMenuDos();
-                } else if (variable == 3) {
+                } else if (option == 3) {
                     ShowMenuTres();
                 }
-            } while (variable != 4);
+            } while (option != 4);
         }
         /// <summary>
         /// Show the main menu 
