@@ -42,10 +42,12 @@ namespace ToDo {
         public static void addTodo() {
             try {
                 Console.WriteLine("Ingrese el nombre de la tarea: ");
-                string task = Console.ReadLine();
-                todoList.Add(task);
+                string newTodo = Console.ReadLine();
+                todoList.Add(newTodo);
                 Console.WriteLine("Tarea registrada");
-            } catch (Exception) {}
+            } catch (Exception) {
+                throw new Exception("Error al ingresar la tarea");
+            }
         }
 
         public static void ShowMenuDos() {
