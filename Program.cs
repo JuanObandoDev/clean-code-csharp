@@ -10,7 +10,7 @@ namespace ToDo {
             do {
                 option = ShowMainMenu();
                 if (option == 1) {
-                    ShowMenuAdd();
+                    addTodo();
                 } else if (option == 2) {
                     ShowMenuDos();
                 } else if (option == 3) {
@@ -39,6 +39,15 @@ namespace ToDo {
             return Convert.ToInt32(line);
         }
 
+        public static void addTodo() {
+            try {
+                Console.WriteLine("Ingrese el nombre de la tarea: ");
+                string task = Console.ReadLine();
+                todoList.Add(task);
+                Console.WriteLine("Tarea registrada");
+            } catch (Exception) {}
+        }
+
         public static void ShowMenuDos() {
             try {
                 Console.WriteLine("Ingrese el número de la tarea a remover: ");
@@ -58,15 +67,6 @@ namespace ToDo {
                         Console.WriteLine("Tarea " + task + " eliminada");
                     }
                 }
-            } catch (Exception) {}
-        }
-
-        public static void ShowMenuAdd() {
-            try {
-                Console.WriteLine("Ingrese el nombre de la tarea: ");
-                string task = Console.ReadLine();
-                todoList.Add(task);
-                Console.WriteLine("Tarea registrada");
             } catch (Exception) {}
         }
 
