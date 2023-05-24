@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ToDo {
     internal class Program {
-        public static List<string> TL { get; set; }
+        public static List<string> todoList { get; set; }
         static void Main(string[] args) {
-            TL = new List<string>();
+            todoList = new List<string>();
             int variable = 0;
             do {
                 variable = ShowMainMenu();
@@ -39,8 +39,8 @@ namespace ToDo {
             try {
                 Console.WriteLine("Ingrese el número de la tarea a remover: ");
                 // Show current taks
-                for (int i = 0; i < TL.Count; i++) {
-                    Console.WriteLine((i + 1) + ". " + TL[i]);
+                for (int i = 0; i < todoList.Count; i++) {
+                    Console.WriteLine((i + 1) + ". " + todoList[i]);
                 }
                 Console.WriteLine("----------------------------------------");
 
@@ -48,9 +48,9 @@ namespace ToDo {
                 // Remove one position
                 int indexToRemove = Convert.ToInt32(line) - 1;
                 if (indexToRemove > -1) {
-                    if (TL.Count > 0) {
-                        string task = TL[indexToRemove];
-                        TL.RemoveAt(indexToRemove);
+                    if (todoList.Count > 0) {
+                        string task = todoList[indexToRemove];
+                        todoList.RemoveAt(indexToRemove);
                         Console.WriteLine("Tarea " + task + " eliminada");
                     }
                 }
@@ -61,18 +61,18 @@ namespace ToDo {
             try {
                 Console.WriteLine("Ingrese el nombre de la tarea: ");
                 string task = Console.ReadLine();
-                TL.Add(task);
+                todoList.Add(task);
                 Console.WriteLine("Tarea registrada");
             } catch (Exception) {}
         }
 
         public static void ShowMenuTres() {
-            if (TL == null || TL.Count == 0) {
+            if (todoList == null || todoList.Count == 0) {
                 Console.WriteLine("No hay tareas por realizar");
             } else {
                 Console.WriteLine("----------------------------------------");
-                for (int i = 0; i < TL.Count; i++) {
-                    Console.WriteLine((i + 1) + ". " + TL[i]);
+                for (int i = 0; i < todoList.Count; i++) {
+                    Console.WriteLine((i + 1) + ". " + todoList[i]);
                 }
                 Console.WriteLine("----------------------------------------");
             }
