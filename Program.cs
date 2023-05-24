@@ -59,12 +59,10 @@ namespace ToDo {
                 string todoToRemove = Console.ReadLine();
                 // Remove one position
                 int indexToRemove = Convert.ToInt32(todoToRemove) - 1;
-                if (indexToRemove > -1) {
-                    if (todoList.Count > 0) {
-                        string removedTodo = todoList[indexToRemove];
-                        todoList.RemoveAt(indexToRemove);
-                        Console.WriteLine("Tarea " + removedTodo + " eliminada");
-                    }
+                if (todoList.Count > 0 && indexToRemove > -1) {
+                    string removedTodo = todoList[indexToRemove];
+                    todoList.RemoveAt(indexToRemove);
+                    Console.WriteLine("Tarea " + removedTodo + " eliminada");
                 }
             } catch (Exception) {
                 throw new Exception("Error al remover la tarea");
