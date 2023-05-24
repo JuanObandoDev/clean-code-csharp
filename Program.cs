@@ -14,7 +14,7 @@ namespace ToDo {
                 } else if (option == 2) {
                     removeTodo();
                 } else if (option == 3) {
-                    ShowMenuTres();
+                    showTodoList();
                 } else if (option == 4) {
                     Console.WriteLine("Gracias por usar la aplicación");
                 } else {
@@ -74,7 +74,7 @@ namespace ToDo {
             }
         }
 
-        public static void ShowMenuTres() {
+        public static void showTodoList() {
             if (todoList == null || todoList.Count == 0) {
                 Console.WriteLine("No hay tareas por realizar");
             } else {
