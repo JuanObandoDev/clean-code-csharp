@@ -86,7 +86,7 @@ namespace ToDo
                     {
                         string removedTodo = todoList[indexToRemove];
                         todoList.RemoveAt(indexToRemove);
-                        Console.WriteLine("Tarea " + removedTodo + " eliminada");
+                        Console.WriteLine($"Tarea {removedTodo} eliminada");
                     }
                     else
                     {
@@ -110,7 +110,7 @@ namespace ToDo
             {
                 Console.WriteLine("----------------------------------------");
                 int todoIndex = 0;
-                todoList.ForEach(todo => Console.WriteLine((++todoIndex) + ". " + todo));
+                todoList.ForEach(todo => Console.WriteLine($"{++todoIndex}. {todo}"));
                 Console.WriteLine("----------------------------------------");
             }
         }
