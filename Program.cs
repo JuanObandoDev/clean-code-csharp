@@ -15,6 +15,10 @@ namespace ToDo {
                     ShowMenuDos();
                 } else if (option == 3) {
                     ShowMenuTres();
+                } else if (option == 4) {
+                    Console.WriteLine("Gracias por usar la aplicación");
+                } else {
+                    Console.WriteLine("Opción no válida");
                 }
             } while (option != 4);
         }
