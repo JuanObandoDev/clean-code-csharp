@@ -74,9 +74,8 @@ namespace ToDo {
                 Console.WriteLine("No hay tareas por realizar");
             } else {
                 Console.WriteLine("----------------------------------------");
-                for (int i = 0; i < todoList.Count; i++) {
-                    Console.WriteLine((i + 1) + ". " + todoList[i]);
-                }
+                int todoIndex = 0;
+                todoList.ForEach(todo=>Console.WriteLine((++todoIndex) + ". " + todo));
                 Console.WriteLine("----------------------------------------");
             }
         }
