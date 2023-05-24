@@ -25,6 +25,8 @@ do
     }
 } while ((Menu)option != Menu.Exit);
 
+// show the options for todo list, 1. Add todo, 2. Remove todo, 3. Show todo list, 4. Exit
+// returns opion selected by user
 int ShowMainMenu()
 {
     Console.WriteLine("----------------------------------------");
@@ -34,7 +36,6 @@ int ShowMainMenu()
     Console.WriteLine("3. Tareas pendientes");
     Console.WriteLine("4. Salir");
 
-    // Read line
     string line = Console.ReadLine();
     return Convert.ToInt32(line);
 }
@@ -59,11 +60,11 @@ void removeTodo()
     try
     {
         Console.WriteLine("Ingrese el número de la tarea a remover: ");
-        // Show current taks
         showTodoList();
 
         string todoToRemove = Console.ReadLine();
-        // Remove one position
+
+        // Remove one position 'cause the list starts in 0
         int indexToRemove = Convert.ToInt32(todoToRemove) - 1;
         if (indexToRemove > (todoList.Count - 1) || indexToRemove < 0)
         {
