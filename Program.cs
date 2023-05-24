@@ -101,16 +101,16 @@ namespace ToDo
 
         public static void showTodoList()
         {
-            if (todoList == null || todoList.Count == 0)
-            {
-                Console.WriteLine("No hay tareas por realizar");
-            }
-            else
+            if (todoList?.Count == 0)
             {
                 Console.WriteLine("----------------------------------------");
                 int todoIndex = 0;
                 todoList.ForEach(todo => Console.WriteLine($"{++todoIndex}. {todo}"));
                 Console.WriteLine("----------------------------------------");
+            }
+            else
+            {
+                Console.WriteLine("No hay tareas por realizar");
             }
         }
     }
